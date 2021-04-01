@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Asp_Net_MVC_Blog.Models.sınıflar.kategori>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<p>
+    @Html.ActionLink("Yeni Ekle", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Kadi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kadet)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kadi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kadet)
+        </td>
+        <td>
+            @Html.ActionLink("Güncelle", "Edit", new { id=item.Kid }) |
+           
+            @Html.ActionLink("Sil", "Delete", new { id=item.Kid })
+        </td>
+    </tr>
+}
+
+</table>

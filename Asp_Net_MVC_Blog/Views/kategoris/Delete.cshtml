@@ -1,0 +1,41 @@
+﻿@model Asp_Net_MVC_Blog.Models.sınıflar.kategori
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Kategori sil</h2>
+
+<h3>Kategoriyi silmek istediğinize emin misiniz?</h3>
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Kadi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kadi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kadet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kadet)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-danger" /> |
+            @Html.ActionLink("Geri Dön", "Index")
+        </div>
+    }
+</div>

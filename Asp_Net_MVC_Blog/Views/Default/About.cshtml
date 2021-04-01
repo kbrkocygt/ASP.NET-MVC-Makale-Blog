@@ -1,0 +1,26 @@
+﻿@model  Asp_Net_MVC_Blog.Models.sınıflar.hakkimizda
+
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+    <div class="content">
+        <div class="wrap">
+            <div class="about">
+                <h3>Hakkımızda</h3>
+                <img src="@Model.resim" alt="" />
+
+                <p>@Html.Raw(Model.aciklama)</p>
+
+
+
+            </div>
+        </div>
+    </div>
+
+

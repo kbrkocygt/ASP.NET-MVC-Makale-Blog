@@ -1,0 +1,71 @@
+﻿@model Asp_Net_MVC_Blog.Models.sınıflar.iletisim
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="/Content/SiteTemplate/css/style.css" type="text/css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="css/slider.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+
+
+    <div class="contact">
+        <div class="wrap">
+            <div class="contact-top">
+                <h3>BİZİMLE İLETİŞİME GEÇİN</h3>
+
+            </div>
+            <div class="form">
+                <div class="alert-info" id="sendmessage">@ViewBag.Uyarı  </div>
+                <form class="cmxform" id="contactForm" method="post" action="/Default/Contact/">
+                    <div>
+                        <input type="text" class="textbox" value="AdSoyad:" required onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'AdSoyad';}">
+                    </div>
+                    <div>
+                        <input type="text" class="textbox" value="Email:" required onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
+                    </div>
+                    <div>
+                        <input type="text" class="textbox" value="Konu:" required onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Konu';}">
+                    </div>
+                    <div>
+                        <button type="submit" class="btn-primary">Gönder</button>
+                    </div>
+                </form>
+            </div>
+            <div class="form1">
+                <div>
+                    <textarea value="Mesajınız:" onfocus="this.value = '';" required onblur="if (this.value == '') {this.value = 'Mesajınız';}">Mesajınız:</textarea>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="contact-bottom">
+               @{ 
+                   Html.RenderAction("partialContact", "Default");
+               }
+                <div class="contact-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48321.08314196218!2d29.387417073269287!3d40.804506156259365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cad8ae0d8aa779%3A0xc50b56d262cb7062!2sGebze%2C%20Kocaeli!5e0!3m2!1str!2str!4v1589507620069!5m2!1str!2str" width="580" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+

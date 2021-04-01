@@ -1,0 +1,42 @@
+﻿@model  Asp_Net_MVC_Blog.Models.sınıflar.makale
+@{
+
+    Layout = null;
+}
+
+<div class="latest-post-wrap">
+    <h4>Son Makaleler</h4>
+    <div class="single-latest-post row align-items-center">
+       
+
+
+            <div class="col-lg-5 post-left">
+                <div class="feature-img relative">
+                    <div class="overlay overlay-bg"></div>
+                    <img class="img-fluid" src="@Model.Mresim" alt="">
+                </div>
+                <ul class="tags">
+                    <li><a href="/Default/blogdetay/@Model.Mid">@Model.Mbaslik</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-7 post-right">
+                <a href="/Default/blogdetay/@Model.Mid">
+                    <h4>
+                       @Model.Mbaslik
+                    </h4>
+                </a>
+                <ul class="meta">
+                    @*<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>*@
+                    <li><a href="#"><span class="lnr lnr-calendar-full"></span>@Model.Mtarih</a></li>
+                    @*<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>*@
+                </ul>
+                <p class="excert">
+                  @Html.Raw(Model.Mözet)
+                </p>
+            </div>
+
+        
+    </div>
+
+</div>
+

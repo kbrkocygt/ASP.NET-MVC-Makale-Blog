@@ -1,0 +1,51 @@
+﻿@model Asp_Net_MVC_Blog.Models.sınıflar.yorum
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yorum Detay</h2>
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Makale.Mbaslik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Makale.Mbaslik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Icerik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Icerik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.onay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.onay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kullaniciadi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kullaniciadi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+   
+    @Html.ActionLink("Geri Dön", "Index")
+</p>

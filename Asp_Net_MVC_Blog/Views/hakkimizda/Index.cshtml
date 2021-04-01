@@ -1,0 +1,35 @@
+﻿@model IEnumerable< Asp_Net_MVC_Blog.Models.sınıflar.hakkimizda>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>Hakkımızda</h2>
+<a class="btn-default" href="/hakkimizda/Create">Yeni Ekle</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Açıklama</th>
+            <th>Resim</th>
+            <th>İşlemler</th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.id</td>
+               
+                <td>@Html.Raw(item.aciklama)</td>
+                <td><img src="@item.resim" width="100" height="100" /></td>
+                <td><a href="/hakkimizda/Edit/@item.id">Düzenle</a> | <a href="/hakkimizda/Delete/@item.id">Sil </a></td>
+            </tr>
+        }
+
+
+
+    </tbody>
+</table>

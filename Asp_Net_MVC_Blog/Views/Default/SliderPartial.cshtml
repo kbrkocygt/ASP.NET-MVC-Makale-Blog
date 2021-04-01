@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Asp_Net_MVC_Blog.Models.sınıflar.galeri>
+@{
+
+    Layout = null;
+}
+
+<div id="main-slider" class="flexslider">
+    <ul class="slides">
+        @foreach (var item in Model)
+        {
+        <li>
+            <img src="@item.Ryolu" alt="" />
+            <div class="flex-caption">
+                @*<a href="/Default/blogdetay/">   <h3> @item.Rbaslik</h3> </a>*@ 
+               
+            </div>
+
+        </li>
+
+        }
+
+
+    </ul>
+</div>

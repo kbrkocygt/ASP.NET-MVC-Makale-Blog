@@ -1,0 +1,69 @@
+﻿@model Asp_Net_MVC_Blog.Models.sınıflar.makale
+  @{  ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Makale Düzenle</h2>
+<div class="form">
+    @using (Html.BeginForm("Edit", "Blog", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken();
+
+    <div class="form-group ">
+        <label for="cname" class="control-label col-lg-2">Makale Başlık <span class="required">*</span></label>
+        <div class="col-lg-10">
+            <input class="form-control" id="Mbaslik" name="Mbaslik" type="text" required value="@Model.Mbaslik" />
+        </div>
+    </div>
+
+    <div class="form-group ">
+        <label for="cemail" class="control-label col-lg-2">Kategori <span class="required">*</span></label>
+        <div class="col-lg-10">
+         
+            @Html.DropDownList("Kid", null, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group ">
+        <label for="cname" class="control-label col-lg-2">Makale Özet <span class="required">*</span></label>
+        <div class="col-lg-10">
+            <textarea name="Mozet" class="ckeditor">@Model.Mözet</textarea>
+        </div>
+    </div>
+    <div class="form-group ">
+        <label for="cemail" class="control-label col-lg-2">Makale İçerik<span class="required">*</span></label>
+        <div class="col-lg-10">
+            <textarea name="Micerik" class="ckeditor">@Model.Micerik</textarea>
+        </div>
+    </div>
+    <div class="form-group ">
+        <label for="curl" class="control-label col-lg-2">Önceki Resim</label>
+        <div class="col-lg-10">
+            <img src="@Model.Mresim" width="150" height="100" />
+        </div>
+    </div>
+    <div class="form-group ">
+        <label for="curl" class="control-label col-lg-2"> Resim</label>
+        <div class="col-lg-10">
+            <input class="form-control" name="Mresim" minlength="5" type="file" accept=".jpg,.png,.jpeg" />
+        </div>
+    </div>
+    <div class="form-group ">
+        <label for="cname" class="control-label col-lg-2">Makale Tarih<span class="required">*</span></label>
+        <div class="col-lg-10">
+            <input class="form-control" id="Mtarih" name="Mtarih" minlength="5" type="text" required value="@Model.Mtarih" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button class="btn btn-primary" type="submit">  Ekle      </button>
+            <button class="btn btn-danger" type="button"><a href="/Blog/Index"> İptal  </a>   </button>
+        </div>
+    </div>
+
+
+}
+
+
+</div>
+

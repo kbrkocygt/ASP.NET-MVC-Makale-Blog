@@ -1,0 +1,37 @@
+﻿@model Asp_Net_MVC_Blog.Models.sınıflar.galeri
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Resim Düzenle</h2>
+<div class="form">
+    <form class="form-validate form-horizontal" id="create" method="post" action="/galeri/Edit/@Model.galeriİD" enctype="multipart/form-data">
+        <div class="form-group ">
+            <label for="cname" class="control-label col-lg-2">Resim Başlık <span class="required">*</span></label>
+            <div class="col-lg-10">
+                <input class="form-control" id="cname" name="Rbaslik" minlength="5" type="text"  />
+            </div>
+        </div>
+        <div class="form-group ">
+            <label for="curl" class="control-label col-lg-2">Önceki Resim</label>
+            <div class="col-lg-10">
+               <img src="@Model.Ryolu" height="150" width="150" />
+            </div>
+        </div>
+        <div class="form-group ">
+            <label for="curl" class="control-label col-lg-2">Yeni Resim</label>
+            <div class="col-lg-10">
+                <input class="form-control " id="curl" type="file" name="Ryolu" accept=".jpg,.png,.jpeg" required />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10">
+                <button class="btn btn-primary" type="submit"> Ekle    </button>
+                <button class="btn btn-danger" type="button"><a href="/galeri/Index"> İptal  </a>   </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+

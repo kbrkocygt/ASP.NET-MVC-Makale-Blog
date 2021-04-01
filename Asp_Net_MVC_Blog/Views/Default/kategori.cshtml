@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Asp_Net_MVC_Blog.Models.sınıflar.kategori>
+@{
+    /**/
+
+    Layout = null;
+}
+<div class="widget">
+
+
+    <ul class="cat">
+        
+            @foreach (var item in Model)
+            {
+
+                <li class="list-bg"><a href="/Default/BlogKategori/@item.Kid">@item.Kadi <span> (@item.makales.Count)    </span> </a></li>
+            }
+
+
+        </ul>
+
+</div>

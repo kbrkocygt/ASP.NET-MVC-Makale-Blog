@@ -1,0 +1,33 @@
+﻿@model Asp_Net_MVC_Blog.Models.sınıflar.hakkimizda
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Hakkımızda Düzenle</h2>
+<div class="form">
+    <form class="form-validate form-horizontal" id="create" method="post" action="/hakkimizda/Edit/@Model.id" enctype="multipart/form-data">
+
+        <div class="form-group ">
+            <label for="cemail" class="control-label col-lg-2">Açıklama<span class="required">*</span></label>
+            <div class="col-lg-10">
+                <textarea name="aciklama" class="ckeditor" required>@Model.aciklama</textarea>
+            </div>
+        </div>
+        <div class="form-group ">
+            <label for="curl" class="control-label col-lg-2">Önceki Resim</label>
+            <div class="col-lg-10">
+                <img src="@Model.resim" height="150" width="150" />
+            </div>
+        </div>
+        <div class="form-group ">
+            <label for="curl" class="control-label col-lg-2">Yeni Resim</label>
+            <div class="col-lg-10">
+                <input class="form-control " id="curl" type="file" name="resim" accept=".jpg,.png,.jpeg" />
+            </div>
+            <input type="submit" value="Kaydet" class="btn btn-success" />
+            <button class="btn btn-danger" type="button"><a href="/hakkimizda/Index"> İptal  </a>   </button>
+        </div>
+
+    </form>
+</div>

@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Asp_Net_MVC_Blog.Models.sınıflar.yorum>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yorumlar</h2>
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#myTable').DataTable(
+
+
+            {
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+                }
+            }
+
+        );
+
+
+
+    });
+
+
+</script>
+
+ <table class="table  table-striped"  id="myTable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Makale.Mbaslik)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Icerik)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.onay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.kullaniciadi)
+            </th>
+            <th></th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Makale.Mbaslik)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Icerik)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.onay)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.kullaniciadi)
+                </td>
+                <td>
+                    @Html.ActionLink("Düzenle", "Edit", new { id = item.YorumId }) |
+                    @Html.ActionLink("Detay", "Details", new { id = item.YorumId }) |
+                    @Html.ActionLink("Sil", "Delete", new { id = item.YorumId })
+                </td>
+            </tr>
+
+
+        }
+    </tbody>
+   
+
+</table>
